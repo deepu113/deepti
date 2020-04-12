@@ -1,0 +1,21 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/e07405f9-2f21-4cf8-93a6-9985f213e060/ # 
+title: EmpDetails
+/storeDetails:
+  get:
+   queryParameters:
+     itemid:
+   responses:
+     200:
+       body:
+         application/json:
+           example:
+             {
+               "id":125,
+               "name":pen,
+               "price":50
+
+             }  
+
+    
+
