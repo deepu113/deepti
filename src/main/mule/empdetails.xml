@@ -127,16 +127,21 @@ output application/json
         </error-handler>
     </flow>
     <flow name="empdetailsFlow" doc:id="cbf26923-15dd-4c20-84c8-feee7eeb833d" >
-		<ee:transform doc:name="Transform Message" doc:id="fe7d201e-3ec4-4018-a8a2-26002172d723" >
+		<logger level="INFO" doc:name="Logger" doc:id="0bb97aed-ba3f-45f1-8d11-87a91bbfde9b" message="DETAILS ABOUT EMPLOYEE............................."/>
+	</flow>
+	<flow name="get:\storeDetails:empdetails-config">
+		<ee:transform doc:name="Transform Message" doc:id="cffbb051-c028-4db6-8207-cbb062bf7de0" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
-output application/java
+output application/json
 ---
 {
+	"id" :3,
+	"name": "veni",
+	"phone":2333
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-	</flow>
-	<flow name="get:\storeDetails:empdetails-config">
+		<logger level="INFO" doc:name="Logger" doc:id="90b6fda8-75ae-45ca-8fcf-195dcd28e3c5" message="DETAILS ABOUT STORE....................................."/>
     </flow>
 </mule>
